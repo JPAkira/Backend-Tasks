@@ -12,7 +12,7 @@ copy * ./
 
 copy /tasks ./tasks
 
-RUN su postgres
+RUN whoami
 
 RUN python manage.py collectstatic
 
