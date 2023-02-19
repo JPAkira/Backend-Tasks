@@ -1,5 +1,10 @@
 FROM  python:3.8.3-slim as python-base
 
+ARG DATABASE_HOST
+ENV DATABASE_HOST=$DATABASE_HOST \
+    DATABASE_USER=$DATABASE_USER \
+    DATABASE_PASSWORD=$DATABASE_PASSWORD \
+
 RUN apt-get update
 
 RUN pip install --upgrade pip
