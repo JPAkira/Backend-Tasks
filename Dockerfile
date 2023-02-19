@@ -12,6 +12,8 @@ copy * ./
 
 copy /tasks ./tasks
 
+RUN su postgres
+
 RUN python manage.py collectstatic
 
 RUN python manage.py makemigrations
