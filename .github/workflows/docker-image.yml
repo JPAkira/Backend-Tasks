@@ -22,4 +22,8 @@ jobs:
       run: docker build . --build-arg DATABASE_HOST=${{ secrets.DATABASE_HOST }} --build-arg DATABASE_USER=${{ secrets.DATABASE_USER }} --build-arg DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
 
     - name: Migrates
+      env:
+        DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+        DATABASE_USER: ${{ secrets.DATABASE_USER }}
+        DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
       run: python3 manage.py migrate
