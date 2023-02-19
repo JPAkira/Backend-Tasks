@@ -30,3 +30,6 @@ jobs:
 
     - name: Collect Statics
       run: python3 manage.py collectstatic --noinput
+
+    - name: Reload server
+      run: systemctl restart gunicorn.service
