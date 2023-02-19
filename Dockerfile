@@ -35,6 +35,8 @@ RUN whoami
 
 RUN python manage.py collectstatic
 
+copy /static ./static
+
 RUN python manage.py makemigrations
 
 RUN python manage.py migrate
