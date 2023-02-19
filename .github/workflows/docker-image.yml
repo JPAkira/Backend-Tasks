@@ -27,3 +27,6 @@ jobs:
         DATABASE_USER: ${{ secrets.DATABASE_USER }}
         DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
       run: python3 manage.py migrate
+
+    - name: Collect Statics
+      run: python3 manage.py collectstatic
