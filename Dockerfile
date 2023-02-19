@@ -12,9 +12,17 @@ RUN echo "teste $DATABASE_PASSWORD"
 
 RUN apt-get update
 
+RUN apt-get install python3-venv
+
 RUN pip install --upgrade pip
 
 COPY requirements.txt ./
+
+RUN python -m venv .venv
+
+RUN source .venv/bin/activate
+
+RUN ./.venv/
 
 RUN pip install -r requirements.txt
 
