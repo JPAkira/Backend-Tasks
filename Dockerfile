@@ -37,7 +37,7 @@ WORKDIR .
 
 RUN python manage.py collectstatic
 
-COPY /static ./static
+COPY * ./
 
 RUN python manage.py makemigrations
 
@@ -45,4 +45,4 @@ RUN python manage.py migrate
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "--worker-class", "uvicorn.workers.UvicornWorker", "--timeout", "15", "--workers", "3", "tasks.routing:application", "--access-logfile", "-", "--error-logfile", "-"]
+CMD ["gunicorn", "--bind", ":8000", "tasks.routing:application"]
