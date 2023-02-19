@@ -8,7 +8,7 @@ COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
 
-copy * .
+copy * ./
 
 copy /tasks ./tasks
 
