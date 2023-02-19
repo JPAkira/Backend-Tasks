@@ -19,10 +19,6 @@ RUN pip install --upgrade pip
 
 COPY requirements.txt ./
 
-RUN python -m venv /opt/venv
-
-ENV PATH="/opt/venv/bin:$PATH"
-
 RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
