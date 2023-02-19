@@ -76,7 +76,7 @@ DATABASES = {
         'NAME': 'tasksdb',
         'USER': 'djangouser',
         'PASSWORD': os.getenv("DATABASE_PASSWORD"),
-        'HOST': '172.18.7.147',
+        'HOST': '172.17.0.1',
         'PORT': '5432',
     }
 }
