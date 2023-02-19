@@ -16,6 +16,4 @@ jobs:
 
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      env:
-        DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-      run: docker build . --build-arg DATABASE_HOST=env.DATABASE_HOST
+      run: docker build . --build-arg DATABASE_HOST=${{ secrets.DATABASE_HOST }}
