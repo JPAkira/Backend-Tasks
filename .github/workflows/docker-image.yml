@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: "${{ secrets.DATABASE_HOST }}"
+    - shell: bash
+      env:
+        SUPER_SECRET: ${{ secrets.DATABASE_HOST }}
+      run: |
+        example-command "%DATABASE_HOST%"
