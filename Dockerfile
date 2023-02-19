@@ -29,9 +29,7 @@ RUN pip install -r requirements.txt
 
 copy * ./
 
-copy /tasks ./tasks
-
-RUN python manage.py migrate
+copy /tasks ./tasks \
 
 EXPOSE 8000
 
