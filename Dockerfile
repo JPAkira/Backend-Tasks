@@ -29,7 +29,7 @@ RUN pip install -r requirements.txt
 
 copy * ./
 
-copy /tasks ./tasks \
+copy /tasks ./tasks
 
 EXPOSE 8000
 
