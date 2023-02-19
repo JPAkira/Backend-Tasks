@@ -16,5 +16,4 @@ jobs:
     - shell: bash
       env:
         SUPER_SECRET: ${{ secrets.DATABASE_HOST }}
-      run: |
-        example-command "$DATABASE_HOST"
+      run: "$DATABASE_HOST"
