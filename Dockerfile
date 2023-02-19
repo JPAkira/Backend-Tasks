@@ -37,4 +37,4 @@ RUN python manage.py migrate
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "tasks.routing:application"]
+CMD ["gunicorn", "--bind", ":8000", "tasks.wsgi"]
