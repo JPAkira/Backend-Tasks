@@ -37,7 +37,7 @@ WORKDIR .
 
 RUN python manage.py collectstatic
 
-COPY . .
+COPY . ./
 
 RUN python manage.py makemigrations
 
