@@ -17,4 +17,4 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.DATABASE_HOST }}
       run: |
-        example-command "%DATABASE_HOST%"
+        example-command "$DATABASE_HOST"
