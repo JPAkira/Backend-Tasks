@@ -12,7 +12,7 @@ RUN echo "teste $DATABASE_PASSWORD"
 
 RUN apt-get update
 
-RUN apt-get install python3-venv
+RUN apt-get install python3-venv -y
 
 RUN pip install --upgrade pip
 
