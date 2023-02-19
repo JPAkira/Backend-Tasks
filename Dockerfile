@@ -33,9 +33,11 @@ copy /tasks ./tasks
 
 RUN whoami
 
+WORKDIR app
+
 RUN python manage.py collectstatic
 
-copy /static ./static
+COPY . /app
 
 RUN python manage.py makemigrations
 
