@@ -73,10 +73,10 @@ WSGI_APPLICATION = 'tasks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'djangouser',
+        'NAME': 'tasksdb',
+        'USER': os.getenv("DATABASE_USER"),
         'PASSWORD': os.getenv("DATABASE_PASSWORD"),
-        'HOST': '172.17.0.1',
+        'HOST': os.getenv("DATABASE_HOST"),
         'PORT': '5432',
     }
 }
