@@ -6,7 +6,8 @@ ARG DATABASE_PASSWORD
 
 ENV DATABASE_HOST=$DATABASE_HOST \
     DATABASE_USER=$DATABASE_USER \
-    DATABASE_PASSWORD=$DATABASE_PASSWORD
+    DATABASE_PASSWORD=$DATABASE_PASSWORD \
+    PYTHONUNBUFFERED=1
     
 RUN echo "teste $DATABASE_PASSWORD"
 
@@ -18,11 +19,9 @@ RUN pip install --upgrade pip
 
 COPY requirements.txt ./
 
-RUN python -m venv .venv
+RUN python -m venv /opt/venv
 
-RUN source .venv/bin/activate
-
-RUN ./.venv/
+ENV PATH="/opt/venv/bin:$PATH"
 
 RUN pip install -r requirements.txt
 
