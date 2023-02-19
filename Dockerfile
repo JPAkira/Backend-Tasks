@@ -31,14 +31,6 @@ copy * ./
 
 copy /tasks ./tasks
 
-RUN whoami
-
-WORKDIR .
-
-RUN python manage.py collectstatic
-
-COPY * ./
-
 RUN python manage.py makemigrations
 
 RUN python manage.py migrate
