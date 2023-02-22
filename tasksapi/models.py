@@ -3,11 +3,9 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 class PriorityType(models.IntegerChoices):
-    UMA_ESTRELA = 1
-    DUAS_ESTRELA = 2
-    TRES_ESTRELA = 3
-    QUATRO_ESTRELA = 4
-    CINCO_ESTRELA = 5
+    BAIXA = 0
+    MEDIA = 1
+    ALTA = 2
 
 
 class StatusType(models.IntegerChoices):
@@ -18,7 +16,7 @@ class StatusType(models.IntegerChoices):
 
 class Task(models.Model):
     name = models.CharField(max_length=50)
-    priority = models.IntegerField(choices=PriorityType.choices, default=PriorityType.TRES_ESTRELA, db_index=True)
+    priority = models.IntegerField(choices=PriorityType.choices, default=PriorityType.MEDIA, db_index=True)
     status = models.IntegerField(choices=StatusType.choices, default=StatusType.PENDENTE, db_index=True)
     event_at = models.DateTimeField(db_index=True)
     finish_at = models.DateTimeField(db_index=True, null=True, blank=True)
