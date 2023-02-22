@@ -27,4 +27,6 @@ class Task(models.Model):
     def save(self, *args, **kwargs):
         if not self.finish_at and self.status == 2:
             self.finish_at = timezone.now()
+        self.updated_at = timezone.now()
+        super(Task, self).save(*args, **kwargs)
 
