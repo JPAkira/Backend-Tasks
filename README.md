@@ -1,5 +1,7 @@
 # Backend-Tasks
 
+OBS: O dns está propagando ainda, então o dominio não está apontando para o serviço
+
 # Bibliotecas / framework / Linguagem:
  - Python
  - Django
