@@ -21,7 +21,7 @@ class Task(models.Model):
     priority = models.IntegerField(choices=PriorityType.choices, default=PriorityType.TRES_ESTRELA, db_index=True)
     status = models.IntegerField(choices=StatusType.choices, default=StatusType.PENDENTE, db_index=True)
     event_at = models.DateTimeField(db_index=True)
-    finish_at = models.DateTimeField(db_index=True)
+    finish_at = models.DateTimeField(db_index=True, null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
