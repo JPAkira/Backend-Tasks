@@ -1,5 +1,5 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
-from rest_framework.fields import CurrentUserDefault
 
 from tasksapi.models import Task
 
@@ -15,3 +15,8 @@ class TaskSerializer(serializers.ModelSerializer):
             **validated_data
         )
         return task
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("username", "first_name", "last_name", "email", "password")

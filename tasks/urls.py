@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from tasksapi.views import TaskViewSet
+from tasksapi.views import TaskViewSet, UserViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -10,6 +10,7 @@ from rest_framework_simplejwt.views import (
 
 router = routers.SimpleRouter()
 router.register(r"tasks", TaskViewSet, basename="tasks")
+router.register(r"users", UserViewSet, basename="users")
 
 urlpatterns = [
     path("backend/api/", include(router.urls)),
