@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'tasksapi',
     'livereload',
     'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,12 @@ DATABASES = {
         'HOST': os.getenv("DATABASE_HOST"),
         'PORT': '5432',
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 # Password validation
