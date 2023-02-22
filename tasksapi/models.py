@@ -24,3 +24,7 @@ class Task(models.Model):
     updated_at = models.DateTimeField(default=timezone.now)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        if not self.finish_at and self.status == 2:
+            self.finish_at = timezone.now()
+
