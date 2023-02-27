@@ -1,6 +1,6 @@
 # Backend-Tasks
 
-https://tasks.akiralab.com.br/
+https://tasks.akiralab.com.br/backend/api/tasks/
 
 # Bibliotecas / framework / Linguagem:
  - Python
