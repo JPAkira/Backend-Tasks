@@ -25,3 +25,6 @@ https://tasks.akiralab.com.br/backend/api/tasks/
  - 2 VCPU
  - 1 GB RAM
  - 50 GB DISK
+
+# IMPORTANTE
+ - Remover a chave de segurança do DJANGO para usar em produção !!!
